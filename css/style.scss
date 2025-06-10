@@ -423,3 +423,19 @@ section h3 {
 .contact-info p, .contact-info ul, .hovedkontor{
     margin: 20px 50px;
 }
+
+footer {
+    background-color: #041E42; /* Baggrundsfarve */
+    color: white; /* Tekstfarve */
+    padding: 20px; /* Indvendig afstand */
+    text-align: center; /* Centrerer teksten */
+    display: flex; /* Aktiverer Flexbox */
+    justify-content: center; /* Centrerer div'erne horisontalt */
+    justify-content: space-evenly; /* Placerer elementerne til venstre, i midten og til højre */
+}
+
+.footer-logo img {
+    max-height: 120px; /* Juster højden efter behov */
+    width: auto; /* Bevarer billedets proportioner */
+    object-fit: contain; /* Sikrer, at billedet passer inden for containeren */
+}
