@@ -216,3 +216,130 @@ section h3 {
 .faq-overskrift{
     text-align: center;
 }
+
+.cta-overskrift, .klar_partner{
+    text-align: center;
+}
+
+.partner-intro{
+    border: 2px solid #96783C; /* Sort kant */
+    padding: 15px; /* Indvendig afstand */
+    margin: 10px auto; /* Centrerer artiklen horisontalt */
+    max-width: 600px; /* Begrænser bredden */
+    width: 100%; /* Sørger for, at den ikke overstiger containerens bredde */
+
+    img{
+        max-width: 100%;
+    }
+
+}
+
+.partner-benefits, .partner-tasks, .partner-advantages, .partner-ownership{
+    border: 2px solid #96783C; /* Sort kant */
+    padding: 15px; /* Indvendig afstand */
+    margin: 10px auto; /* Centrerer artiklen horisontalt */
+    max-width: 600px; /* Begrænser bredden */
+    width: 100%;
+}
+
+.partner-is-it-for-you{
+    border: 2px solid #96783C; /* Sort kant */
+    padding: 15px; /* Indvendig afstand */
+    margin: 10px auto; /* Centrerer artiklen horisontalt */
+    max-width: 600px; /* Begrænser bredden */
+    width: 100%;
+
+    img{
+        max-width: 100%;
+    }
+}
+
+.horisontal-line{
+    width: 80%; /* Gør linjen bred nok til at dække hele bredden */
+    height: 2px; /* Højden på linjen */
+    background-color: #96783C; /* Farven på linjen */
+    margin: 20px auto; /* Centrerer linjen horisontalt og tilføjer afstand ovenfor og nedenfor */
+}
+
+.partner-join{
+    padding: 15px; /* Indvendig afstand */
+    margin: 10px auto; /* Centrerer artiklen horisontalt */
+    max-width: 600px; /* Begrænser bredden */
+    width: 100%;
+    position:relative;
+
+    button{
+        background-color: darkblue;
+        color: white;
+        text-align: right;
+        position: absolute;
+        right: 10px;
+        border-radius: 5px; /* Runde hjørner */
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    h3{
+        text-align: left;
+    }
+}
+
+.partner-process{
+    border: 2px solid #96783C; /* Sort kant */
+    padding: 15px; /* Indvendig afstand */
+    margin: 10px auto; /* Centrerer artiklen horisontalt */
+    max-width: 600px; /* Begrænser bredden */
+    width: 100%;
+
+    .process-steps {
+    display: flex; /* Gør containeren til en flex container */
+    align-items: flex-start; /* Juster elementerne i starten af containeren */
+    }
+
+    .process-steps-image {
+        margin-right: 20px; /* Giver lidt plads mellem billedet og knapperne */
+        height: 10%;
+    }
+
+    .process-steps-list{
+        display: flex;
+        flex-direction: column; /* Stabler knapperne vertikalt */
+    }
+
+    button {
+        margin-bottom: 10px; /* Placerer lidt afstand mellem knapperne */
+    }
+}
+
+.partner-partners{
+    h2{
+        text-align: center;
+    }
+
+    .partner-article{
+         text-align: center;
+        border: 1px solid #96783C; /* tynd guldkant */
+        padding: 20px;
+        border-radius: 8px;
+        width: 150px;
+
+        div{
+            img{
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 50%; /* cirkel */
+                border: 2px solid #ddd;
+            }
+
+            h5{
+                font-weight: bold;
+                margin-top: 10px;
+            }
+        }
+    }
+
+
+}
