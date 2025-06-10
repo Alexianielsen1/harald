@@ -415,3 +415,11 @@ section h3 {
         width: 100%; /* Fylder hele bredden på små skærme */
     }
 }
+
+.contact-info h2, .hovedkontor h2{
+    text-align: center;
+}
+
+.contact-info p, .contact-info ul, .hovedkontor{
+    margin: 20px 50px;
+}
