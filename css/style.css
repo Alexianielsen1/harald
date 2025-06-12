@@ -209,4 +209,225 @@ section h3 {
 
 .faq-overskrift {
   text-align: center;
+}
+
+.cta-overskrift, .klar_partner {
+  text-align: center;
+  margin: 50px;
+}
+
+.partner-intro {
+  border: 2px solid #96783C; /* Sort kant */
+  padding: 15px; /* Indvendig afstand */
+  margin: 10px auto; /* Centrerer artiklen horisontalt */
+  max-width: 600px; /* Begrænser bredden */
+  width: 100%; /* Sørger for, at den ikke overstiger containerens bredde */
+}
+.partner-intro img {
+  max-width: 100%;
+}
+
+.partner-benefits, .partner-tasks, .partner-advantages, .partner-ownership, .partner-values {
+  border: 2px solid #96783C; /* Sort kant */
+  padding: 15px; /* Indvendig afstand */
+  margin: 10px auto; /* Centrerer artiklen horisontalt */
+  max-width: 600px; /* Begrænser bredden */
+  width: 100%;
+}
+
+.partner-is-it-for-you {
+  border: 2px solid #96783C; /* Sort kant */
+  padding: 15px; /* Indvendig afstand */
+  margin: 10px auto; /* Centrerer artiklen horisontalt */
+  max-width: 600px; /* Begrænser bredden */
+  width: 100%;
+}
+.partner-is-it-for-you img {
+  max-width: 100%;
+}
+
+.horisontal-line {
+  width: 80%; /* Gør linjen bred nok til at dække hele bredden */
+  height: 2px; /* Højden på linjen */
+  background-color: #96783C; /* Farven på linjen */
+  margin: 100px auto; /* Centrerer linjen horisontalt og tilføjer afstand ovenfor og nedenfor */
+}
+
+.partner-join {
+  padding: 15px; /* Indvendig afstand */
+  margin: 100px auto; /* Centrerer artiklen horisontalt */
+  max-width: 600px; /* Begrænser bredden */
+  width: 100%;
+  position: relative;
+}
+.partner-join button {
+  background-color: darkblue;
+  color: white;
+  text-align: right;
+  position: absolute;
+  right: 10px;
+  border-radius: 5px; /* Runde hjørner */
+}
+.partner-join h2 {
+  text-align: center;
+}
+.partner-join h3 {
+  text-align: left;
+}
+
+.partner-process {
+  border: 2px solid #96783C; /* Sort kant */
+  padding: 15px; /* Indvendig afstand */
+  margin: 10px auto; /* Centrerer sektionen horisontalt */
+  max-width: 1200px; /* Begrænser bredden */
+  width: 100%; /* Fylder hele bredden */
+  display: flex; /* Aktiverer Flexbox */
+  flex-wrap: wrap; /* Tillader elementerne at bryde til næste række */
+  gap: 20px; /* Afstand mellem billedet og knapperne */
+  align-items: flex-start; /* Justerer elementerne øverst */
+}
+
+.process-steps {
+  display: flex; /* Gør containeren til en Flexbox */
+  flex-wrap: wrap; /* Tillader knapperne og billedet at bryde til næste række */
+  gap: 20px; /* Afstand mellem elementerne */
+  justify-content: center; /* Centrerer knapperne og billedet horisontalt */
+  align-items: center; /* Centrerer knapperne og billedet vertikalt */
+  text-align: center; /* Sikrer, at indholdet er centreret */
+}
+
+.process-steps-list {
+  flex: 1; /* Giver knapperne fleksibilitet */
+  max-width: 600px; /* Begrænser bredden af knapperne */
+  display: flex;
+  flex-direction: column; /* Stabler knapperne lodret */
+  gap: 10px; /* Afstand mellem knapperne */
+  align-items: center; /* Centrerer knapperne horisontalt */
+}
+
+.process-steps-list button {
+  width: 100%; /* Gør alle knapper lige brede */
+  background-color: #818EA0; /* Ens baggrundsfarve */
+  color: #ffffff; /* Ens tekstfarve */
+  font-size: 16px; /* Ens tekststørrelse */
+  font-weight: bold; /* Gør teksten fed */
+  border: none; /* Fjerner standardkant */
+  border-radius: 5px; /* Runde hjørner */
+  padding: 10px; /* Indvendig afstand */
+  cursor: pointer; /* Skifter til en pointer ved hover */
+  text-align: center; /* Centrerer teksten inde i knappen */
+  transition: background-color 0.3s ease; /* Tilføjer en hover-effekt */
+}
+
+.process-steps-list button:hover {
+  background-color: #00bcd4; /* Ændrer baggrundsfarve ved hover */
+}
+
+.process-steps-image {
+  flex: 1; /* Giver billedet fleksibilitet */
+  max-width: 600px; /* Begrænser bredden af billedet */
+  text-align: center; /* Centrerer billedet horisontalt */
+}
+
+.process-steps-image img {
+  width: 100%; /* Sørger for, at billedet fylder hele containerens bredde */
+  height: auto; /* Bevarer billedets proportioner */
+  -o-object-fit: contain;
+     object-fit: contain; /* Sikrer, at billedet passer inden for containeren */
+  border-radius: 8px; /* Runde hjørner (valgfrit) */
+}
+
+button {
+  margin-bottom: 10px; /* Placerer lidt afstand mellem knapperne */
+}
+
+.partner-section {
+  text-align: center;
+}
+
+.cards-section {
+  border: 2px solid #96783C; /* Guldkant */
+  padding: 20px; /* Indvendig afstand */
+  margin: 20px auto; /* Centrerer sektionen horisontalt */
+  max-width: 1200px; /* Begrænser sektionens bredde */
+  background-color: #fff; /* Baggrundsfarve */
+}
+
+.cards-section h4 {
+  margin-bottom: 20px; /* Afstand mellem overskriften og kortene */
+  text-align: left; /* Justerer overskriften til venstre */
+}
+
+.cards-section .card-container {
+  display: flex; /* Aktiverer Flexbox */
+  flex-wrap: wrap; /* Tillader kortene at bryde til næste række */
+  gap: 20px; /* Afstand mellem kortene */
+  justify-content: flex-start; /* Justerer kortene til venstre */
+}
+
+.card {
+  display: flex; /* Aktiverer Flexbox for hvert kort */
+  flex-direction: column; /* Stabler indholdet lodret */
+  align-items: center; /* Centrerer indholdet horisontalt */
+  text-align: center; /* Centrerer teksten inde i kortet */
+  border: 2px solid #96783C; /* Tilføjer kant til kortet */
+  border-radius: 8px; /* Runde hjørner */
+  padding: 15px; /* Indvendig afstand */
+  width: 200px; /* Fast bredde for kortet */
+  background-color: #ffffff; /* Baggrundsfarve */
+}
+
+.card img {
+  width: 100px; /* Billedets bredde */
+  height: 100px; /* Billedets højde */
+  -o-object-fit: cover;
+     object-fit: cover; /* Sikrer, at billedet passer inden for containeren */
+  border-radius: 50%; /* Gør billedet cirkulært */
+  margin-bottom: 10px; /* Afstand mellem billedet og overskriften */
+}
+
+.card h5 {
+  font-size: 1em; /* Justerer overskriftens størrelse */
+  font-weight: bold; /* Gør overskriften fed */
+  margin: 0; /* Fjerner ekstra margin */
+}
+
+@media (max-width: 768px) {
+  .cards-section {
+    flex-direction: column; /* Skifter til lodret layout på små skærme */
+    gap: 10px; /* Reducerer afstand mellem kortene */
+  }
+  .card {
+    width: 100%; /* Fylder hele bredden på små skærme */
+  }
+}
+.contact-info h2, .hovedkontor h2 {
+  text-align: center;
+}
+
+.contact-info p, .contact-info ul, .hovedkontor {
+  margin: 20px 50px;
+}
+
+footer {
+  background-color: #041E42; /* Baggrundsfarve */
+  color: white; /* Tekstfarve */
+  padding: 20px; /* Indvendig afstand */
+  text-align: center; /* Centrerer teksten */
+  display: flex; /* Aktiverer Flexbox */
+  justify-content: center; /* Centrerer div'erne horisontalt */
+  justify-content: space-evenly; /* Placerer elementerne til venstre, i midten og til højre */
+}
+
+.footer-logo img {
+  max-height: 120px; /* Juster højden efter behov */
+  width: auto; /* Bevarer billedets proportioner */
+  -o-object-fit: contain;
+     object-fit: contain; /* Sikrer, at billedet passer inden for containeren */
+}
+
+@media (max-width: 768px) {
+  .footer-logo img {
+    max-height: 80px; /* Reducerer højden på mindre skærme */
+  }
 }/*# sourceMappingURL=style.css.map */

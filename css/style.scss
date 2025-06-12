@@ -1,441 +1,440 @@
+@use 'partial';
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+    margin: partial.$primary-margin; /* Anvender margin fra partial.scss */
+    font-family: Helvetica, sans-serif;
 }
 
 .header {
-    display: flex;
+    display: partial.$primary-display; /* Anvender display fra partial.scss */
     justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #ffffff;
-    color: white;
-}
+    align-items: partial.$primary-align-items; /* Anvender align-items fra partial.scss */
+    padding: partial.$primary-padding partial.$secondary-padding; /* Anvender padding fra partial.scss */
+    background-color: partial.$primary-backgroundcolor; /* Anvender background-color fra partial.scss */
+    color: partial.$secondary-color; /* Anvender color fra partial.scss */
+    
+    .logo img {
+        max-height: 60px; /* Juster højden efter behov */
+        width: partial.$primary-width; /* Bevarer billedets proportioner */
+        object-fit: partial.$primary-object-fit; /* Sikrer, at billedet passer inden for containeren */
+    }
 
-.logo img {
-    max-height: 60px; /* Juster højden efter behov */
-    width: auto; /* Bevarer billedets proportioner */
-    object-fit: contain; /* Sikrer, at billedet passer inden for containeren */
-}
+    .nav {
+        display: partial.$primary-display; 
+        align-items: partial.$primary-align-items;
 
-.nav {
-    display: flex;
-    align-items: center;
-}
+        .nav-links {
+            list-style: none;
+            display: partial.$primary-display;
+            gap: partial.$primary-gap; 
+            margin: partial.$primary-margin; 
+            padding: partial.$tertiary-padding;
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-}
+            li a {
+                text-decoration: none;
+                color: partial.$secondary-color; /* Anvender color fra partial.scss */
+                transition: color partial.$primary-transition; /* Anvender transition fra partial.scss */
+            }
 
-.nav-links li a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    transition: color 0.3s;
-}
+            li a:hover {
+                color: partial.$tertiary-color; /* Anvender hover-farve fra partial.scss */
+            }
+        }
 
-.nav-links li a:hover {
-    color: #00bcd4;
-}
+        .menu {
+            display: partial.$secondary-display; /* Skjuler hamburger-menuen som standard */
+            flex-direction: partial.$primary-flex-direction; /* Anvender flex-direction fra partial.scss */
+            cursor: partial.$primary_cursor; /* Anvender cursor fra partial.scss */
+            gap: 5px;
 
-.menu {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.menu span {
-    width: 25px;
-    height: 3px;
-    background-color: white;
+            .menu span {
+                width: 25px;
+                height: 3px;
+                background-color: partial.$primary-backgroundcolor;
+            }
+        }
+    }
 }
 
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Skjuler menuen som standard */
-        flex-direction: column;
-        background-color: #333;
-        position: absolute;
+        display: partial.$secondary-display; /* Skjuler menuen som standard */
+        flex-direction: partial.$primary-flex-direction; /* Anvender flex-direction fra partial.scss */
+        background-color: partial.$secondary-backgroundcolor; /* Anvender background-color fra partial.scss */
+        position: partial.$primary-position; /* Anvender position fra partial.scss */
         top: 60px;
         right: 20px;
-        width: 200px;
-        padding: 10px;
-        border-radius: 5px;
+        width: partial.$tertiary-width; /* Anvender width fra partial.scss */
+        padding: partial.$primary-padding; /* Anvender padding fra partial.scss */
+        border-radius: partial.$primary-border-radius; /* Anvender border-radius fra partial.scss */
     }
 
     .nav-links.active {
-        display: flex; /* Viser menuen, når klassen "active" tilføjes */
+        display: partial.$primary-display; /* Viser menuen, når klassen "active" tilføjes */
     }
 
     .menu {
-        display: flex; /* Viser hamburger-menuen på små skærme */
+        display: partial.$primary-display; /* Viser hamburger-menuen på små skærme */
     }
 }
 
 .hero {
     background-color: #1e3555;
-    padding: 50px 20px;
-    text-align: center;
-    color:#ffffff;
+    padding: partial.$quaternary-padding partial.$secondary-padding;
+    text-align: partial.$primary_text-align; /* Anvender text-align fra partial.scss */
+    color: partial.$primary-color; /* Anvender color fra partial.scss */
 }
 
 .section-overskrift {
-    text-align: center;
+    text-align: partial.$primary_text-align; /* Anvender text-align fra partial.scss */
 }
 
 
 article {
-    border: 2px solid #96783C; /* Sort kant */
-    padding: 15px; /* Indvendig afstand */
-    margin: 10px auto; /* Centrerer artiklen horisontalt */
-    max-width: 600px; /* Begrænser bredden */
-    width: 100%; /* Sørger for, at den ikke overstiger containerens bredde */
-}
+    border: partial.$primary-border partial.$secondary-border partial.$quaternary-color; /* Sort kant */
+    padding: partial.$quinary-padding; /* Indvendig afstand */
+    margin: partial.$secondary-margin partial.$tertiary-margin; /* Centrerer artiklen horisontalt */
+    max-width: partial.$primary-max-width; /* Begrænser bredden */
+    width: partial.$secondary-width; /* Sørger for, at den ikke overstiger containerens bredde */
 
-article h3{
-    text-align: center;
-}
+    h3{
+        text-align: partial.$primary_text-align; /* Anvender text-align fra partial.scss */
+    }
 
-article img, .behandlinger {
-    display: block; /* Gør billedet til et blok-element */
-    margin: 20px auto 0; /* Centrerer billedet horisontalt og tilføjer afstand ovenfor */
-    max-width: 100%; /* Sørger for, at billedet ikke overstiger containerens bredde */
-    max-height: 300px; /* Begrænser billedets højde */
-    width: auto; /* Bevarer billedets proportioner */
-    height: auto; /* Bevarer billedets proportioner */
-}
-
-.placering{
-    text-align: center;
-}
-
-.underoverskrift{
-    text-align: center;
-}
-
-.behandlinger{
-    width: 100px; /* Bevarer billedets proportioner */
-    display: flex;
-   flex-direction: row;
-   align-items: center;
-}
-
-.behhandling{
-    border-radius: 50px;
-}
-
-.vertical-line {
-    width: 2px; /* Bredden på linjen */
-    height: 100px; /* Højden på linjen */
-    background-color: #000; /* Farven på linjen */
-    margin: 0 auto; /* Centrerer linjen horisontalt */
-}
-.job {
-    display: flex; /* Aktiverer Flexbox */
-    flex-direction: row; /* Placerer elementerne ved siden af hinanden */
-    align-items: center; /* Centrerer elementerne vertikalt */
-    justify-content: center; /* Centrerer elementerne horisontalt */
-    gap: 20px; /* Tilføjer afstand mellem elementerne */
-    padding: 20px; /* Indvendig afstand */
-    border: 2px solid #96783C; /* Tilføjer kant til sektionen */
-    border-radius: 5px; /* Runde hjørner */
-    
-}
-
-@media (max-width: 768px) {
-    .vertical-line {
-        height: 50px; /* Reducerer højden på mindre skærme */
+    img, .behandlinger {
+        display: partial.$tertiary-display; /* Gør billedet til et blok-element */
+        margin: partial.$quaternary-margin partial.$tertiary-margin partial.$primary-margin; /* Centrerer billedet horisontalt og tilføjer afstand ovenfor */
+        max-width: partial.$secondary-max-width; /* Sørger for, at billedet ikke overstiger containerens bredde */
+        max-height: partial.$primary-max-height; /* Begrænser billedets højde */
+        width: partial.$primary-width; /* Bevarer billedets proportioner */
+        height: partial.$primary-height; /* Bevarer billedets proportioner */
     }
 }
 
+.placering, .underoverskrift{
+    text-align: partial.$primary_text_align; /* Anvender text-align fra partial.scss */
+}
+
+.behandlinger{
+    width: partial.$quaternary-width; /* Bevarer billedets proportioner */
+    display: partial.$primary-display;
+    flex-direction: partial.$secondary-flex-direction; /* Anvender flex-direction fra partial.scss */
+    align-items: partial.$primary-align-items; /* Anvender align-items fra partial.scss */
+}
+
+.behandling{
+    border-radius: partial.$secondary-border-radius; /* Runde hjørner */
+}
+
 .job-content{
-    text-align: center;
+    text-align: partial.$primary_text_align; /* Anvender text-align fra partial.scss */
 }
 
 section h3 {
-    text-align: center;
+    text-align: partial.$primary_text_align; /* Anvender text-align fra partial.scss */
 }
 
-.job-beskrivelse{
-    text-align: center;
-    
+.job {
+    display: partial.$primary-display; /* Aktiverer Flexbox */
+    flex-direction: partial.$secondary-flex-direction; /* Placerer elementerne ved siden af hinanden */
+    align-items: partial.$primary-align-items; /* Centrerer elementerne vertikalt */
+    justify-content: partial.$primary-justify-content; /* Centrerer elementerne horisontalt */
+    gap: partial.$primary-gap; /* Tilføjer afstand mellem elementerne */
+    padding: partial.$secondary-padding; /* Indvendig afstand */
+    border: partial.$primary-border partial.$secondary-border partial.$quaternary-color; /* Tilføjer kant til sektionen */
+    border-radius: $primary-border-radius; /* Runde hjørner */
+
+    .job-beskrivelse{
+    text-align: partial.$primary_text_align; /* Anvender text-align fra partial.scss */
+    }
+
+    .vertical-line {
+        width: 2px; /* Bredden på linjen */
+        height: partial.$secondary-height; /* Højden på linjen */
+        background-color: partial.$secondary-backgroundcolor; /* Farven på linjen */
+        margin: partial.$primary-margin partial.$tertiary-margin; /* Centrerer linjen horisontalt */
+    }
+
+    @media (max-width: 768px) {
+        .vertical-line {
+            height: partial.$tertiary-height; /* Reducerer højden på mindre skærme */
+        }
+    }
 }
 
 .job-indhold{
-    display: flex;
-}
+    display: partial.$primary-display; /* Aktiverer Flexbox */
 
-.job-billede{
-    max-width: 750px; /* Begrænser billedets bredde */
-    width: auto; /* Bevarer billedets proportioner */
-    height: auto; /* Bevarer billedets proportioner */
-    object-fit: contain; /* Sikrer, at billedet passer inden for containeren */
-    margin: 0 auto; /* Centrerer billedet horisontalt */
-    padding: 10px;
+    .job-billede{
+        max-width: 750px; /* Begrænser billedets bredde */
+        width: partial.$primary-width; /* Bevarer billedets proportioner */
+        height: partial.$primary-height; /* Bevarer billedets proportioner */
+        object-fit: partial.$primary-object-fit; /* Sikrer, at billedet passer inden for containeren */
+        margin: partial.$primary-margin partial.$tertiary-margin; /* Centrerer billedet horisontalt */
+        padding: partial.$primary-padding; /* Indvendig afstand */
+    }
 }
-
 
 
 
 .faq{
-    border: 1px solid #000000;
-    width: 50%;
+    border: 1px partial.$secondary-border partial.$secondary-color;
+    width: partial.$quinary-width; /* Gør sektionen bred nok til at dække hele bredden */
     padding: 50px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-}
+    background-color: partial.$primary-backgroundcolor; /* Baggrundsfarve */
+    color: partial.$secondary-color; /* Tekstfarve */
 
-.faq-answer {
-    display: none;
-    margin: 0;
-    padding: 0.5em 0;
-    color: white;
-    margin: 10px;
-    padding: 10px;
-}
 
-.faq-item.active .faq-answer {
-    display: block;
-}
+    .faq-answer {
+        display: partial.$secondary-display; /* Skjuler svarene som standard */
+        margin: partial.$primary-margin;
+        padding: 0.5em partial.$tertiary-padding;
+        color: partial.$primary-color; /* Tekstfarve */
+        margin: partial.$secondary;
+        padding: partial.$secondary-padding; /* Indvendig afstand */
+    }
 
-.faq-icon {
-    float: right; /* Placer ikonet til højre */
-    font-weight: bold;
-    font-size: 1.2em;
-    transition: transform 0.3s ease; /* Tilføj en lille animation */
-}
+    .faq-item.active .faq-answer {
+        display: partial.$tertiary-display; /* Viser svaret, når klassen "active" tilføjes */
+    }
 
-.faq-item.active .faq-icon {
-    transform: rotate(180deg); /* Valgfri rotationseffekt */
-}
+    .faq-icon {
+        float: right; /* Placer ikonet til højre */
+        font-weight: partial.$primary-font-weight; /* Gør ikonet fedt */
+        font-size: 1.2em;
+        transition: transform partial.$primary-transition partial.$secondary-transition; /* Tilføj en lille animation */
+    }
 
-.faq-overskrift{
-    text-align: center;
+    .faq-item.active .faq-icon {
+        transform: rotate(180deg); /* Valgfri rotationseffekt */
+    }
+
+    .faq-overskrift{
+        text-align: partial.$primary_text_align; /* Anvender text-align fra partial.scss */
+    }
+
 }
 
 .cta-overskrift, .klar_partner{
-    text-align: center;
-    margin: 50px;
+    text-align: partial.$primary_text_align; /* Anvender text-align fra partial.scss */
+    margin: partial.$quinary-margin;
 }
 
 .partner-intro{
-    border: 2px solid #96783C; /* Sort kant */
-    padding: 15px; /* Indvendig afstand */
-    margin: 10px auto; /* Centrerer artiklen horisontalt */
-    max-width: 600px; /* Begrænser bredden */
-    width: 100%; /* Sørger for, at den ikke overstiger containerens bredde */
+    border: partial.$primary-border partial.$secondary-border partial.$quaternary-color; /* Sort kant */
+    padding: partial.$quinary-padding; /* Indvendig afstand */
+    margin: partial.$secondary-margin partial.$tertiary-margin; /* Centrerer artiklen horisontalt */
+    max-width: partial.$primary-max-width; /* Begrænser bredden */
+    width: partial.$secondary-width; /* Sørger for, at den ikke overstiger containerens bredde */
 
     img{
-        max-width: 100%;
+        max-width: partial.$secondary-max-width; /* Sørger for, at billedet ikke overstiger containerens bredde */
     }
 
 }
 
 .partner-benefits, .partner-tasks, .partner-advantages, .partner-ownership, .partner-values{
-    border: 2px solid #96783C; /* Sort kant */
-    padding: 15px; /* Indvendig afstand */
-    margin: 10px auto; /* Centrerer artiklen horisontalt */
-    max-width: 600px; /* Begrænser bredden */
-    width: 100%;
+    border: partial.$primary-border partial.$secondary-border partial.$quaternary-color; /* Sort kant */
+    padding: partial.$quinary-padding; /* Indvendig afstand */
+    margin: partial.$secondary-margin partial.$tertiary-margin; /* Centrerer artiklen horisontalt */
+    max-width: partial.$primary-max-width; /* Begrænser bredden */
+    width: partial.$secondary-width; /* Sørger for, at den ikke overstiger containerens bredde */
 }
 
 .partner-is-it-for-you{
-    border: 2px solid #96783C; /* Sort kant */
-    padding: 15px; /* Indvendig afstand */
-    margin: 10px auto; /* Centrerer artiklen horisontalt */
-    max-width: 600px; /* Begrænser bredden */
-    width: 100%;
+    border: partial.$primary-border partial.$secondary-border partial.$quaternary-color; /* Sort kant */
+    padding: partial.$quinary-padding; /* Indvendig afstand */
+    margin: partial.$secondary-margin partial.$tertiary-margin; /* Centrerer artiklen horisontalt */
+    max-width: partial.$primary-max-width; /* Begrænser bredden */
+    width: partial.$secondary-width; /* Sørger for, at den ikke overstiger containerens bredde */
 
     img{
-        max-width: 100%;
+        max-width: partial.$secondary-max-width; /* Sørger for, at billedet ikke overstiger containerens bredde */
     }
 }
 
 .horisontal-line{
     width: 80%; /* Gør linjen bred nok til at dække hele bredden */
     height: 2px; /* Højden på linjen */
-    background-color: #96783C; /* Farven på linjen */
-    margin: 100px auto; /* Centrerer linjen horisontalt og tilføjer afstand ovenfor og nedenfor */
+    background-color: partial.$quaternary-color; /* Farven på linjen */
+    margin: partial.$senary-margin partial.$tertiary-margin; /* Centrerer linjen horisontalt og tilføjer afstand ovenfor og nedenfor */
 }
 
 .partner-join{
-    padding: 15px; /* Indvendig afstand */
-    margin: 100px auto; /* Centrerer artiklen horisontalt */
-    max-width: 600px; /* Begrænser bredden */
-    width: 100%;
-    position:relative;
+    padding: partial.$quinary-padding; /* Indvendig afstand */
+    margin: partial.$senary-margin partial.$tertiary-margin; /* Centrerer artiklen horisontalt */
+    max-width: partial.$primary-max-width; /* Begrænser bredden */
+    width: partial.$secondary-width; /* Sørger for, at den ikke overstiger containerens bredde */
+    position: relative;
 
     button{
         background-color: darkblue;
-        color: white;
+        color: partial.$primary-color; /* Tekstfarve */
         text-align: right;
-        position: absolute;
+        position: partial.$primary-position; /* Anvender position fra partial.scss */
         right: 10px;
-        border-radius: 5px; /* Runde hjørner */
+        border-radius: partial.$primary-border-radius; /* Runde hjørner */
     }
 
     h2{
-        text-align: center;
+        text-align: partial.$primary_text_align; /* Anvender text-align fra partial.scss */
     }
 
     h3{
-        text-align: left;
+        text-align: partial.$secondary-text-align; /* Anvender text-align fra partial.scss */
     }
 }
 
 .partner-process {
-    border: 2px solid #96783C; /* Sort kant */
-    padding: 15px; /* Indvendig afstand */
-    margin: 10px auto; /* Centrerer sektionen horisontalt */
-    max-width: 1200px; /* Begrænser bredden */
-    width: 100%; /* Fylder hele bredden */
-    display: flex; /* Aktiverer Flexbox */
-    flex-wrap: wrap; /* Tillader elementerne at bryde til næste række */
-    gap: 20px; /* Afstand mellem billedet og knapperne */
+    border: partial.$primary-border partial.$secondary-border partial.$quaternary-color; /* Sort kant */
+    padding: partial.$quinary-padding; /* Indvendig afstand */
+    margin: partial.$secondary-margin partial.$tertiary-margin; /* Centrerer sektionen horisontalt */
+    max-width: partial.$tertiary-max-width; /* Begrænser bredden */
+    width: partial.$secondary-width; /* Fylder hele bredden */
+    display: partial.$primary-display; /* Aktiverer Flexbox */
+    flex-wrap: partial.$primary-flex-wrap; /* Tillader elementerne at bryde til næste række */
+    gap: partial.$primary-gap; /* Afstand mellem billedet og knapperne */
     align-items: flex-start; /* Justerer elementerne øverst */
-}
 
-
-
-.process-steps {
-    display: flex; /* Gør containeren til en Flexbox */
-    flex-wrap: wrap; /* Tillader knapperne og billedet at bryde til næste række */
-    gap: 20px; /* Afstand mellem elementerne */
-    justify-content: center; /* Centrerer knapperne og billedet horisontalt */
-    align-items: center; /* Centrerer knapperne og billedet vertikalt */
-    text-align: center; /* Sikrer, at indholdet er centreret */
+    .process-steps {
+        display: partial.$primary-display; /* Gør containeren til en Flexbox */
+        flex-wrap: partial.$primary-flex-wrap; /* Tillader knapperne og billedet at bryde til næste række */
+        gap: partial.$primary-gap; /* Afstand mellem elementerne */
+        justify-content: partial.$primary-justify-content; /* Centrerer knapperne og billedet horisontalt */
+        align-items: partial.$primary-align-items; /* Centrerer knapperne og billedet vertikalt */
+        text-align: partial.$primary-text-align; /* Sikrer, at indholdet er centreret */
+    }
 }
 
 .process-steps-list {
-    flex: 1; /* Giver knapperne fleksibilitet */
-    max-width: 600px; /* Begrænser bredden af knapperne */
-    display: flex;
-    flex-direction: column; /* Stabler knapperne lodret */
-    gap: 10px; /* Afstand mellem knapperne */
-    align-items: center; /* Centrerer knapperne horisontalt */
-}
+    flex: partial.$primary-flex; /* Giver knapperne fleksibilitet */
+    max-width: partial.$primary-max-width; /* Begrænser bredden af knapperne */
+    display: partial.$primary-display; /* Aktiverer Flexbox */
+    flex-direction: partial.$primary-flex-direction; /* Stabler knapperne lodret */
+    gap: partial.$secondary-gap; /* Afstand mellem knapperne */
+    align-items: partial.$primary-align-items; /* Centrerer knapperne horisontalt */
 
-.process-steps-list button {
-    width: 100%; /* Gør alle knapper lige brede */
-    background-color: #818EA0; /* Ens baggrundsfarve */
-    color: #ffffff; /* Ens tekstfarve */
-    font-size: 16px; /* Ens tekststørrelse */
-    font-weight: bold; /* Gør teksten fed */
-    border: none; /* Fjerner standardkant */
-    border-radius: 5px; /* Runde hjørner */
-    padding: 10px; /* Indvendig afstand */
-    cursor: pointer; /* Skifter til en pointer ved hover */
-    text-align: center; /* Centrerer teksten inde i knappen */
-    transition: background-color 0.3s ease; /* Tilføjer en hover-effekt */
-}
+    button {
+        width: partial.$secondary-width; /* Gør alle knapper lige brede */
+        background-color: #818EA0; /* Ens baggrundsfarve */
+        color: partial.$primary-color; /* Ens tekstfarve */
+        font-size: 16px; /* Ens tekststørrelse */
+        font-weight: partial.$primary-font-weight; /* Gør teksten fed */
+        border: none; /* Fjerner standardkant */
+        border-radius: partial.$primary-border-radius; /* Runde hjørner */
+        margin-bottom: partial.$secondary-margin; /* Placerer lidt afstand mellem knapperne */;
+        padding: partial.$primary-padding; /* Indvendig afstand */
+        cursor: partial.$primary-cursor; /* Skifter til en pointer ved hover */
+        text-align: partial.$primary-text-align; /* Centrerer teksten inde i knappen */
+        transition: background-color partial.$primary-transition partial.$secondary-transition; /* Tilføjer en hover-effekt */
+    }
 
-.process-steps-list button:hover {
-    background-color: #00bcd4; /* Ændrer baggrundsfarve ved hover */
+    button:hover {
+        background-color: partial.$tertiary-color; /* Ændrer baggrundsfarve ved hover */
+    }
 }
 
 .process-steps-image {
-    flex: 1; /* Giver billedet fleksibilitet */
-    max-width: 600px; /* Begrænser bredden af billedet */
-    text-align: center; /* Centrerer billedet horisontalt */
-}
+    flex: partial.$primary-flex; /* Giver billedet fleksibilitet */
+    max-width: partial.$primary-max-width; /* Begrænser bredden af billedet */
+    text-align: partial.$primary_text-align; /* Centrerer billedet horisontalt */
 
-.process-steps-image img {
-    width: 100%; /* Sørger for, at billedet fylder hele containerens bredde */
-    height: auto; /* Bevarer billedets proportioner */
-    object-fit: contain; /* Sikrer, at billedet passer inden for containeren */
-    border-radius: 8px; /* Runde hjørner (valgfrit) */
-}
-
-    button {
-        margin-bottom: 10px; /* Placerer lidt afstand mellem knapperne */
+    img {
+        width: partial.$secondary-width; /* Sørger for, at billedet fylder hele containerens bredde */
+        height: partial.$primary-height; /* Bevarer billedets proportioner */
+        object-fit: partial.$primary-object-fit; /* Sikrer, at billedet passer inden for containeren */
+        border-radius: partial.$tertiary-border-radius; /* Runde hjørner (valgfrit) */
     }
-
+}
 
 .partner-section{
-    text-align: center;
-}
+    text-align: partial.$primary_text_align; /* Anvender text-align fra partial.scss */
 
-.cards-section {
-    border: 2px solid #96783C; /* Guldkant */
-    padding: 20px; /* Indvendig afstand */
-    margin: 20px auto; /* Centrerer sektionen horisontalt */
-    max-width: 1200px; /* Begrænser sektionens bredde */
-    background-color: #fff; /* Baggrundsfarve */
-}
 
-.cards-section h4 {
-    margin-bottom: 20px; /* Afstand mellem overskriften og kortene */
-    text-align: left; /* Justerer overskriften til venstre */
-}
+    .cards-section {
+        border: partial.$primary-border partial.$secondary-border partial.$quaternary-color; /* Guldkant */
+        padding: partial.$secondary-padding; /* Indvendig afstand */
+        margin: partial.$quaternary-margin partial.$tertiary-margin; /* Centrerer sektionen horisontalt */
+        max-width: partial.$tertiary-max-width; /* Begrænser sektionens bredde */
+        background-color: partial.$primary-backgroundcolor; /* Baggrundsfarve */
 
-.cards-section .card-container {
-    display: flex; /* Aktiverer Flexbox */
-    flex-wrap: wrap; /* Tillader kortene at bryde til næste række */
-    gap: 20px; /* Afstand mellem kortene */
-    justify-content: flex-start; /* Justerer kortene til venstre */
-}
+        h4 {
+            margin-bottom: partial.$quaternary-margin; /* Afstand mellem overskriften og kortene */
+            text-align: partial.$secondary-text-align; /* Justerer overskriften til venstre */
+        }
 
-.card {
-    display: flex; /* Aktiverer Flexbox for hvert kort */
-    flex-direction: column; /* Stabler indholdet lodret */
-    align-items: center; /* Centrerer indholdet horisontalt */
-    text-align: center; /* Centrerer teksten inde i kortet */
-    border: 2px solid #96783C; /* Tilføjer kant til kortet */
-    border-radius: 8px; /* Runde hjørner */
-    padding: 15px; /* Indvendig afstand */
-    width: 200px; /* Fast bredde for kortet */
-    background-color: #ffffff; /* Baggrundsfarve */
-}
+        .card-container, .person-container {
+            display: partial.$primary-display; /* Aktiverer Flexbox */
+            flex-wrap: partial.$primary-flex-wrap; /* Tillader kortene at bryde til næste række */
+            gap: partial.$primary-gap; /* Afstand mellem kortene */
+            justify-content: flex-start; /* Justerer kortene til venstre */
+        }
 
-.card img {
-    width: 100px; /* Billedets bredde */
-    height: 100px; /* Billedets højde */
-    object-fit: cover; /* Sikrer, at billedet passer inden for containeren */
-    border-radius: 50%; /* Gør billedet cirkulært */
-    margin-bottom: 10px; /* Afstand mellem billedet og overskriften */
-}
+        .card, .person {
+            display: partial.$primary-display; /* Aktiverer Flexbox for hvert kort */
+            flex-direction: partial.$primary-flex-direction; /* Stabler indholdet lodret */
+            align-items: partial.$primary-align-items; /* Centrerer indholdet horisontalt */
+            text-align: partial.$primary-text-align; /* Centrerer teksten inde i kortet */
+            border: partial.$primary-border partial.$secondary-border partial.$quaternary-color; /* Tilføjer kant til kortet */
+            border-radius: partial.$tertiary-border-radius; /* Runde hjørner */
+            padding: partial.$quinary-padding; /* Indvendig afstand */
+            width: partial.$tertiary-width; /* Fast bredde for kortet */
+            background-color: partial.$primary-backgroundcolor; /* Baggrundsfarve */
 
-.card h5 {
-    font-size: 1em; /* Justerer overskriftens størrelse */
-    font-weight: bold; /* Gør overskriften fed */
-    margin: 0; /* Fjerner ekstra margin */
+            img{
+                width: partial.$quaternary-width; /* Billedets bredde */
+                height: partial.$secondary-height; /* Billedets højde */
+                object-fit: cover; /* Sikrer, at billedet passer inden for containeren */
+                border-radius: 50%; /* Gør billedet cirkulært */
+                margin-bottom: partial.$secondary-margin; /* Afstand mellem billedet og overskriften */
+        }
+
+            h5, h3, h4{
+                font-size: 1em; /* Justerer overskriftens størrelse */
+                font-weight: partial.$primary-font-weight; /* Gør overskriften fed */
+                margin: partial.$primary-margin; /* Fjerner ekstra margin */
+            }
+        }
+    }
 }
 
 @media (max-width: 768px) {
     .cards-section {
-        flex-direction: column; /* Skifter til lodret layout på små skærme */
-        gap: 10px; /* Reducerer afstand mellem kortene */
+        flex-direction: partial.$primary-flex-direction; /* Skifter til lodret layout på små skærme */
+        gap: partial.$secondary-gap; /* Reducerer afstand mellem kortene */
     }
 
     .card {
-        width: 100%; /* Fylder hele bredden på små skærme */
+        width: partial.$secondary-width; /* Fylder hele bredden på små skærme */
     }
 }
 
 .contact-info h2, .hovedkontor h2{
-    text-align: center;
+    text-align: partial.$primary_text_align; /* Anvender text-align fra partial.scss */
 }
 
 .contact-info p, .contact-info ul, .hovedkontor{
-    margin: 20px 50px;
+    margin: partial.$quaternary-margin partial.$quinary-margin; /* Centrerer teksten horisontalt */
 }
 
 footer {
     background-color: #041E42; /* Baggrundsfarve */
-    color: white; /* Tekstfarve */
-    padding: 20px; /* Indvendig afstand */
-    text-align: center; /* Centrerer teksten */
-    display: flex; /* Aktiverer Flexbox */
-    justify-content: center; /* Centrerer div'erne horisontalt */
+    color: partial.$primary-color; /* Tekstfarve */
+    padding: partial.$secondary-padding; /* Indvendig afstand */
+    text-align: partial.$primary-text-align; /* Centrerer teksten */
+    display: partial.$primary-display; /* Aktiverer Flexbox */
+    justify-content: partial.$primary-justify-content; /* Centrerer div'erne horisontalt */
     justify-content: space-evenly; /* Placerer elementerne til venstre, i midten og til højre */
+    
+    .footer-logo img {
+        max-height: 120px; /* Juster højden efter behov */
+        width: partial.$primary-width; /* Bevarer billedets proportioner */
+        object-fit: partial.$primary-object-fit; /* Sikrer, at billedet passer inden for containeren */
+    }
 }
 
-.footer-logo img {
-    max-height: 120px; /* Juster højden efter behov */
-    width: auto; /* Bevarer billedets proportioner */
-    object-fit: contain; /* Sikrer, at billedet passer inden for containeren */
+@media (max-width: 768px) {
+    .footer-logo img {
+        max-height: 80px; /* Reducerer højden på mindre skærme */
+    }
 }
