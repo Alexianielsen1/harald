@@ -1,55 +1,90 @@
 /*Variabler*/
 
-$primary-margin: 0;
-$secondary-margin: 10px;
-$tertiary-margin: auto;
-$quaternary-margin: 20px;
-$quinary-margin: 50px;
-$senary-margin: 100px;
-$primary-display: flex;
-$secondary-display: none;
-$tertiary-display: block;
-$primary-align-items: center;
-$primary-padding: 10px;
-$secondary-padding: 20px;
-$tertiary-padding: 0;
-$quaternary-padding: 50px;
-$quinary-padding: 15px;
-$primary-backgroundcolor: #ffffff;
-$secondary-backgroundcolor: #000000;
-$primary-color: #ffffff;
-$secondary-color: #000000;
-$tertiary-color: #00bcd4;
-$quaternary-color: #96783C;
-$primary-width: auto;
-$secondary-width: 100%;
-$tertiary-width: 200px;
-$quaternary-width: 100px;
-$quinary-width: 50%;
-$primary-object-fit: contain;
-$primary-gap: 20px;
-$secondary-gap: 10px;
-$primary-transition: 0.3s;
-$secondary-transition: ease;
-$primary-flex-direction: column;
-$secondary-flex-direction: row;
-$primary-cursor: pointer;
-$primary-position: absolute;
-$primary-border-radius: 5px;
-$secondary-border-radius: 50px;
-$tertiary-border-radius: 8px;
-$primary-text-align: center;
-$secondary-text-align: left;
-$primary-border: 2px;
-$secondary-border: solid;
-$primary-max-width: 600px;
-$secondary-max-width: 100%;
-$tertiary-max-width: 1200px;
-$primary-max-height: 300px;
-$primary-height: auto;
-$secondary-height: 100px;
-$tertiary-height: 50px;
-$primary-justify-content: center;
-$primary-font-weight: bold;
-$primary-flex-wrap: wrap;
-$primary-flex: 1;
+/* Marginer */
+// Marginer bruges til at definere afstande mellem elementer
+$primary-margin: 0; // Ingen margin
+$secondary-margin: 10px; // Lille margin
+$tertiary-margin: auto; // Automatisk centreret margin
+$quaternary-margin: 20px; // Medium margin
+$quinary-margin: 50px; // Stor margin
+$senary-margin: 100px; // Ekstra stor margin
+
+/* Display */
+// Display-typer bruges til at styre layout og synlighed af elementer
+$primary-display: flex; // Flexbox layout
+$secondary-display: none; // Skjuler elementer
+$tertiary-display: block; // Standard blok-layout
+
+/* Justering og afstand */
+// Bruges til at justere elementer og tilføje indvendig afstand
+$primary-align-items: center; // Centrerer elementer vertikalt
+$primary-padding: 10px; // Lille padding
+$secondary-padding: 20px; // Medium padding
+$tertiary-padding: 0; // Ingen padding
+$quaternary-padding: 50px; // Stor padding
+$quinary-padding: 15px; // Specifik padding
+
+/* Farver */
+// Definerer farver til baggrunde, tekst og andre elementer
+$primary-backgroundcolor: #ffffff; // Hvid baggrund
+$secondary-backgroundcolor: #000000; // Sort baggrund
+$primary-color: #ffffff; // Hvid tekstfarve
+$secondary-color: #000000; // Sort tekstfarve
+$tertiary-color: #00bcd4; // Blå accentfarve
+$quaternary-color: #96783C; // Brun accentfarve
+
+/* Dimensioner */
+// Bruges til at definere bredder og højder af elementer
+$primary-width: auto; // Automatisk bredde
+$secondary-width: 100%; // Fuld bredde
+$tertiary-width: 200px; // Fast bredde
+$quaternary-width: 100px; // Mindre bredde
+$quinary-width: 50%; // Halv bredde
+$primary-max-width: 600px; // Maksimal bredde
+$secondary-max-width: 100%; // Fuld maksimal bredde
+$tertiary-max-width: 1200px; // Ekstra stor maksimal bredde
+$primary-max-height: 300px; // Maksimal højde
+$primary-height: auto; // Automatisk højde
+$secondary-height: 100px; // Fast højde
+$tertiary-height: 50px; // Mindre højde
+
+/* Flexbox og layout */
+// Bruges til at styre layout og placering af elementer
+$primary-flex-direction: column; // Vertikal layout
+$secondary-flex-direction: row; // Horisontal layout
+$primary-flex-wrap: wrap; // Tillader linjebrud i flexbox
+$primary-flex: 1; // Flex-værdi for elementer
+
+/* Afstand og overgang */
+// Bruges til at definere afstand mellem elementer og overgangseffekter
+$primary-gap: 20px; // Stor afstand mellem elementer
+$secondary-gap: 10px; // Lille afstand mellem elementer
+$primary-transition: 0.3s; // Hurtig overgang
+$secondary-transition: ease; // Blød overgang
+
+/* Positionering og cursor */
+// Bruges til at styre placering og interaktion med elementer
+$primary-position: absolute; // Absolut positionering
+$primary-cursor: pointer; // Cursor ændres til pointer ved hover
+
+/* Border og radius */
+// Bruges til at definere kanter og afrunding af hjørner
+$primary-border: 2px; // Tykkelse af kant
+$secondary-border: solid; // Type af kant
+$primary-border-radius: 5px; // Lille afrunding af hjørner
+$secondary-border-radius: 50px; // Stor afrunding af hjørner
+$tertiary-border-radius: 8px; // Medium afrunding af hjørner
+
+/* Tekstjustering og font */
+// Bruges til at styre tekstjustering og typografi
+$primary-text-align: center; // Centrerer tekst
+$secondary-text-align: left; // Justerer tekst til venstre
+$primary-font-weight: bold; // Fed tekst
+
+/* Justering og placering */
+// Bruges til at styre placering og fordeling af elementer
+$primary-justify-content: center; // Centrerer elementer horisontalt
+
+/* Objektjustering */
+// Bruges til at sikre, at indhold (f.eks. billeder) skaleres korrekt og passer inden for containeren uden beskæring eller strækning.
+$primary-object-fit: contain; // Sikrer, at indholdet af et element (f.eks. billeder) skaleres og passer inden for containeren uden at beskære eller strække det. Bruges ofte til responsive design.
